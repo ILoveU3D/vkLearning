@@ -21,8 +21,10 @@ void HelloTriangleApplication::initWindow(){
     glfwInit();
     // 不要创建带有opengl的上下文
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+    GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+    const GLFWvidmode* mode = glfwGetVideoMode(monitor);
     // 创建窗口
-    window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Vulkan WYK", nullptr, nullptr);
+    window = glfwCreateWindow(mode->width, mode->height, "Viking's Room!", monitor, nullptr);
     glfwSetWindowUserPointer(window, this);
     glfwSetFramebufferSizeCallback(window, framebufferResizeCallback);
     glfwSetKeyCallback(window, escapeCallback);
