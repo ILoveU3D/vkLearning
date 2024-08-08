@@ -1,0 +1,132 @@
+[
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle_tutorial.dir/triangle.cpp.o -c /home/mtuser/Projects/codes/api/triangle/triangle.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/triangle.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/main.cpp.o -c /home/mtuser/Projects/codes/api/triangle/main.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/main.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/buffer.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/buffer.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/buffer.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/commandBuffer.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/commandBuffer.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/commandBuffer.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/depth.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/depth.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/depth.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/descriptor.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/descriptor.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/descriptor.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/drawFrame.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/drawFrame.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/drawFrame.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/frameBuffer.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/frameBuffer.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/frameBuffer.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/graphicPipeline.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/graphicPipeline.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/graphicPipeline.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/instance.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/instance.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/instance.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/logicalDevice.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/logicalDevice.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/logicalDevice.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/mipmap.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/mipmap.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/mipmap.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/model3D.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/model3D.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/model3D.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/overview.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/overview.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/overview.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/physicalDevice.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/physicalDevice.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/physicalDevice.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/renderPass.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/renderPass.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/renderPass.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/sampler.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/sampler.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/sampler.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/surface.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/surface.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/surface.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/swapChain.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/swapChain.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/swapChain.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/syncObjects.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/syncObjects.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/syncObjects.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/textureImage.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/textureImage.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/textureImage.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/textureImageView.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/textureImageView.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/textureImageView.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/validationLayer.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/validationLayer.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/validationLayer.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/vertexBuffer.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/vertexBuffer.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/vertexBuffer.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/vulkanInit.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/vulkanInit.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/vulkanInit.cpp"
+},
+{
+  "directory": "/home/mtuser/Projects/codes/api/triangle/build",
+  "command": "/usr/bin/c++   -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include  -g   -std=gnu++2a -o CMakeFiles/triangle.dir/src/windowInit.cpp.o -c /home/mtuser/Projects/codes/api/triangle/src/windowInit.cpp",
+  "file": "/home/mtuser/Projects/codes/api/triangle/src/windowInit.cpp"
+}
+]

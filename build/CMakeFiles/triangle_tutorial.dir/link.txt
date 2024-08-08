@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/triangle_tutorial.dir/triangle.cpp.o  -o triangle_tutorial  /usr/local/lib/libglfw3.a /usr/lib/x86_64-linux-gnu/libvulkan.so -lpthread /usr/lib/x86_64-linux-gnu/librt.so -lm -ldl 
