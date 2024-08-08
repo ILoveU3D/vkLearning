@@ -1,4 +1,3 @@
-/home/mtuser/Projects/codes/api/triangle/build/CMakeFiles/edit_cache.dir
 /home/mtuser/Projects/codes/api/triangle/build/CMakeFiles/rebuild_cache.dir
-/home/mtuser/Projects/codes/api/triangle/build/CMakeFiles/triangle_tutorial.dir
+/home/mtuser/Projects/codes/api/triangle/build/CMakeFiles/edit_cache.dir
 /home/mtuser/Projects/codes/api/triangle/build/CMakeFiles/triangle.dir

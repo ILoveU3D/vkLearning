@@ -1,5 +1,5 @@
 compile(){
-    cd shaders_triangle
+    cd shaders
     glslc shader.vert -o vert.spv
     glslc shader.frag -o frag.spv
     cd ../build
@@ -28,7 +28,7 @@ case $1 in
         cd ..
         ;;
     *)
-        echo "this is 三角形程序运行脚本：（1：编译，2：运行，3：编译运行）"
+        echo "this is 程序运行脚本：（1：编译，2：运行，3：编译运行）"
         exit
         ;;
 esac

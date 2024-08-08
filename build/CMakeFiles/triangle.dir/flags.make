@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mtuser/glm-light -I/home/mtuser/Projects/codes/api/triangle/./include 
+CXX_INCLUDES = -I/home/mtuser/Projects/codes/api/triangle/./glm -I/home/mtuser/Projects/codes/api/triangle/./include 
 

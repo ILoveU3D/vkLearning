@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/mtuser/Projects/codes/api/triangle/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -109,19 +109,6 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named triangle_tutorial
-
-# Build rule for target.
-triangle_tutorial: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 triangle_tutorial
-.PHONY : triangle_tutorial
-
-# fast build rule for target.
-triangle_tutorial/fast:
-	$(MAKE) -f CMakeFiles/triangle_tutorial.dir/build.make CMakeFiles/triangle_tutorial.dir/build
-.PHONY : triangle_tutorial/fast
 
 #=============================================================================
 # Target rules for targets named triangle
@@ -811,42 +798,14 @@ src/windowInit.cpp.s:
 	$(MAKE) -f CMakeFiles/triangle.dir/build.make CMakeFiles/triangle.dir/src/windowInit.cpp.s
 .PHONY : src/windowInit.cpp.s
 
-triangle.o: triangle.cpp.o
-
-.PHONY : triangle.o
-
-# target to build an object file
-triangle.cpp.o:
-	$(MAKE) -f CMakeFiles/triangle_tutorial.dir/build.make CMakeFiles/triangle_tutorial.dir/triangle.cpp.o
-.PHONY : triangle.cpp.o
-
-triangle.i: triangle.cpp.i
-
-.PHONY : triangle.i
-
-# target to preprocess a source file
-triangle.cpp.i:
-	$(MAKE) -f CMakeFiles/triangle_tutorial.dir/build.make CMakeFiles/triangle_tutorial.dir/triangle.cpp.i
-.PHONY : triangle.cpp.i
-
-triangle.s: triangle.cpp.s
-
-.PHONY : triangle.s
-
-# target to generate assembly for a file
-triangle.cpp.s:
-	$(MAKE) -f CMakeFiles/triangle_tutorial.dir/build.make CMakeFiles/triangle_tutorial.dir/triangle.cpp.s
-.PHONY : triangle.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... triangle_tutorial"
+	@echo "... edit_cache"
 	@echo "... triangle"
 	@echo "... main.o"
 	@echo "... main.i"
@@ -923,9 +882,6 @@ help:
 	@echo "... src/windowInit.o"
 	@echo "... src/windowInit.i"
 	@echo "... src/windowInit.s"
-	@echo "... triangle.o"
-	@echo "... triangle.i"
-	@echo "... triangle.s"
 .PHONY : help
 
 

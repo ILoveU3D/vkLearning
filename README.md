@@ -2,6 +2,10 @@
 Prove where I'm learning `Vulkan` step by step. 
 
 ## How to play?
+Make sure you have installed these pkgs:
+* Vulkan SDK
+* GLFW
+
 Clone the repo with the following command:
 
 ~~~ shell
