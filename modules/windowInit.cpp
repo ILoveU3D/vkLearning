@@ -4,10 +4,10 @@
 #include <stdexcept>
 #include <cstdlib>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::framebufferResizeCallback(GLFWwindow* window, int width, int height){
-    auto app = reinterpret_cast<HelloTriangleApplication*>(glfwGetWindowUserPointer(window));
+void Application::framebufferResizeCallback(GLFWwindow* window, int width, int height){
+    auto app = reinterpret_cast<Application*>(glfwGetWindowUserPointer(window));
     app -> framebufferResized = true;
 }
 
@@ -16,7 +16,7 @@ void escapeCallback(GLFWwindow* window, int key, int scancode, int action, int m
         glfwSetWindowShouldClose(window, GL_TRUE);
 }
 
-void HelloTriangleApplication::initWindow(){
+void Application::initWindow(){
     std::cout << "initializing glfw Window..." << std::endl;
     glfwInit();
     // 不要创建带有opengl的上下文

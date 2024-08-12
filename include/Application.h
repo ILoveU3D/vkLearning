@@ -9,18 +9,14 @@
 
 #include <Vertex.h>
 
-// const std::string VERTEX_SHADER_PATH = "/home/mtuser/Projects/codes/api/triangle/shaders/vert.spv";
-// const std::string FRAGMENT_SHADER_PATH = "/home/mtuser/Projects/codes/api/triangle/shaders/frag.spv";
-// const std::string MODEL_PATH = "/home/mtuser/Projects/codes/api/triangle/resources/viking_room.obj";
-// const std::string TEXTURE_PATH = "/home/mtuser/Projects/codes/api/triangle/resources/viking_room.png";
-const std::string VERTEX_SHADER_PATH = "../shaders/vert.spv";
-const std::string FRAGMENT_SHADER_PATH = "../shaders/frag.spv";
-const std::string MODEL_PATH = "../resources/viking_room.obj";
-const std::string TEXTURE_PATH = "../resources/viking_room.png";
+const std::string VERTEX_SHADER_PATH = "/home/mtuser/Projects/codes/api/triangle/shaders/vert.spv";
+const std::string FRAGMENT_SHADER_PATH = "/home/mtuser/Projects/codes/api/triangle/shaders/frag.spv";
+const std::string MODEL_PATH = "/home/mtuser/Projects/codes/api/triangle/assets/viking_room.obj";
+const std::string TEXTURE_PATH = "/home/mtuser/Projects/codes/api/triangle/assets/viking_room.png";
 const int WINDOW_WIDTH = 2560;
 const int WINDOW_HEIGHT = 1440;
 
-class HelloTriangleApplication{
+class Application{
 public:
     void run();
     // 动态调整窗口

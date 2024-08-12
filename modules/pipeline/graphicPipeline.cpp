@@ -1,5 +1,5 @@
 #include <fstream>
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
 std::vector<char> readFile(const std::string& filename){
     std::ifstream file(filename, std::ios::ate | std::ios::binary);
@@ -25,7 +25,7 @@ VkShaderModule createShaderModule(const std::vector<char>& code, VkDevice device
     return shaderModule;
 }
 
-void HelloTriangleApplication::createGraphicPipeline(){
+void Application::createGraphicPipeline(){
     auto vertexShaderCode = readFile(VERTEX_SHADER_PATH);
     auto fragmentShaderCode = readFile(FRAGMENT_SHADER_PATH);
 

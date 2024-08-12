@@ -1,7 +1,7 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 #include <QueueFamilyIndice.h>
 
-void HelloTriangleApplication::createLogicalDevice(){
+void Application::createLogicalDevice(){
     std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
     VkDeviceQueueCreateInfo queueCreateInfo{};
     queueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;

@@ -1,6 +1,6 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::createImageViews(){
+void Application::createImageViews(){
     swapChainImageViews.resize(swapChainImages.size());
 
     for(size_t i = 0;i < swapChainImages.size();i++){
@@ -17,7 +17,7 @@ void HelloTriangleApplication::createImageViews(){
     }
 }
 
-VkImageView HelloTriangleApplication::createImageView(VkImage image, VkFormat format, VkImageAspectFlags aspectFlags, uint32_t mipLevels){
+VkImageView Application::createImageView(VkImage image, VkFormat format, VkImageAspectFlags aspectFlags, uint32_t mipLevels){
     VkImageViewCreateInfo viewInfo{};
     viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
     viewInfo.image = image;
@@ -38,6 +38,6 @@ VkImageView HelloTriangleApplication::createImageView(VkImage image, VkFormat fo
     return imageView;
 }
 
-void HelloTriangleApplication::createTextureImageView(){
+void Application::createTextureImageView(){
     textureImageView = createImageView(textureImage, VK_FORMAT_R8G8B8A8_SRGB, VK_IMAGE_ASPECT_COLOR_BIT, mipLevels);
 }

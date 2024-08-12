@@ -1,8 +1,8 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
 
-void HelloTriangleApplication::createTextureImage(){
+void Application::createTextureImage(){
     int texWidth, texHeight, texChannels;
     stbi_uc* pixels = stbi_load(TEXTURE_PATH.c_str(), &texWidth, &texHeight, &texChannels, STBI_rgb_alpha);
     mipLevels = static_cast<uint32_t>(std::floor(std::log2(std::max(texWidth, texHeight)))) + 1;
@@ -33,7 +33,7 @@ void HelloTriangleApplication::createTextureImage(){
     generateMipmaps(textureImage, texWidth, texHeight, mipLevels);
 }
 
-void HelloTriangleApplication::createImage(uint32_t texWidth, uint32_t texHeight, uint32_t mipLevels, VkFormat format, VkImageTiling tiling, VkImageUsageFlags usage, VkMemoryPropertyFlags properties, VkImage& image, VkDeviceMemory& imageMemory){
+void Application::createImage(uint32_t texWidth, uint32_t texHeight, uint32_t mipLevels, VkFormat format, VkImageTiling tiling, VkImageUsageFlags usage, VkMemoryPropertyFlags properties, VkImage& image, VkDeviceMemory& imageMemory){
     std::cout << "create image: (" << texWidth << "," << texHeight << ")" << std::endl;
     // 将缓冲抽象为vulkan image
     VkImageCreateInfo imageCreateInfo{};
@@ -70,7 +70,7 @@ void HelloTriangleApplication::createImage(uint32_t texWidth, uint32_t texHeight
 }
 
 // 执行缓冲区拷贝到图像命令，创建barrier用于同步
-void HelloTriangleApplication::transitionImageLayout(VkImage image, VkFormat format, VkImageLayout oldImageLayout, VkImageLayout newImageLayout, uint32_t mipLevels){
+void Application::transitionImageLayout(VkImage image, VkFormat format, VkImageLayout oldImageLayout, VkImageLayout newImageLayout, uint32_t mipLevels){
     VkCommandBuffer commandBuffer = beginSingleCommand();
 
     VkImageMemoryBarrier barrier{};
@@ -107,7 +107,7 @@ void HelloTriangleApplication::transitionImageLayout(VkImage image, VkFormat for
     endSingleCommand(commandBuffer);
 }
 
-void HelloTriangleApplication::copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width, uint32_t height){
+void Application::copyBufferToImage(VkBuffer buffer, VkImage image, uint32_t width, uint32_t height){
     VkCommandBuffer commandBuffer = beginSingleCommand();
 
     VkBufferImageCopy region{};

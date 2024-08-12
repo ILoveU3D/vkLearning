@@ -1,6 +1,6 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::createSyncObjects(){
+void Application::createSyncObjects(){
     imageAvailableSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
     renderFinishSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
     inFlightFences.resize(MAX_FRAMES_IN_FLIGHT);

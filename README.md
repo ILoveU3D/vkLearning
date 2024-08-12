@@ -26,7 +26,7 @@ sh debug.sh 3
 
 ## You can see...
 if everything goes rightly, you will see the rotated *Vking's room*:
-![](./assets/viking_room.png)
+![](./resources/viking_room.png)
 
 ## What's more
 * Now this demo is so simple and only be tested on Ubuntu platform.

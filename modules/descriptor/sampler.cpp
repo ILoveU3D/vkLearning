@@ -1,6 +1,6 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::createTextureSampler(){
+void Application::createTextureSampler(){
     VkSamplerCreateInfo samplerCreateInfo{};
     samplerCreateInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
     samplerCreateInfo.magFilter = VK_FILTER_LINEAR;

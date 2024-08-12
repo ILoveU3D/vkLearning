@@ -1,7 +1,7 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
 // 确定正确的内存类型
-uint32_t HelloTriangleApplication::findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties){
+uint32_t Application::findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties){
     VkPhysicalDeviceMemoryProperties memoryProperties;
     vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memoryProperties);
 
@@ -13,7 +13,7 @@ uint32_t HelloTriangleApplication::findMemoryType(uint32_t typeFilter, VkMemoryP
 }
 
 // 创建缓冲区
-void HelloTriangleApplication::createBuffer(VkDeviceSize deviceSize, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer& buffer, VkDeviceMemory& bufferMemory){
+void Application::createBuffer(VkDeviceSize deviceSize, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer& buffer, VkDeviceMemory& bufferMemory){
     VkBufferCreateInfo bufferCreateInfo{};
     bufferCreateInfo.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
     bufferCreateInfo.size = deviceSize;
@@ -37,7 +37,7 @@ void HelloTriangleApplication::createBuffer(VkDeviceSize deviceSize, VkBufferUsa
     vkBindBufferMemory(device, buffer, bufferMemory, 0);
 }
 
-VkCommandBuffer HelloTriangleApplication::beginSingleCommand(){
+VkCommandBuffer Application::beginSingleCommand(){
     VkCommandBufferAllocateInfo commandBufferAllocateInfo{};
     commandBufferAllocateInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
     commandBufferAllocateInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
@@ -55,7 +55,7 @@ VkCommandBuffer HelloTriangleApplication::beginSingleCommand(){
     return commandBuffer;
 }
 
-void HelloTriangleApplication::endSingleCommand(VkCommandBuffer commandBuffer){
+void Application::endSingleCommand(VkCommandBuffer commandBuffer){
     vkEndCommandBuffer(commandBuffer);
 
     VkSubmitInfo submitInfo{};
@@ -68,7 +68,7 @@ void HelloTriangleApplication::endSingleCommand(VkCommandBuffer commandBuffer){
     vkFreeCommandBuffers(device, commandPool, 1, &commandBuffer);
 }
 
-void HelloTriangleApplication::copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size){
+void Application::copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size){
     VkCommandBuffer commandBuffer = beginSingleCommand();
 
     VkBufferCopy copyRegin{};

@@ -1,7 +1,7 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 #include <SwapChainSupport.h>
 
-void HelloTriangleApplication::createSwapChain(){
+void Application::createSwapChain(){
     // 查询交换链能力
     SwapChainSupport details;
     // 首先查询基本表面功能
@@ -42,7 +42,7 @@ void HelloTriangleApplication::createSwapChain(){
     swapChainExtent = extent;
 }
 
-void HelloTriangleApplication::cleanupSwapChain(){
+void Application::cleanupSwapChain(){
     for(size_t i = 0;i < swapChainFrameBuffers.size();i++)
         vkDestroyFramebuffer(device, swapChainFrameBuffers[i], nullptr);
     for(size_t i = 0;i < swapChainFrameBuffers.size();i++)
@@ -50,7 +50,7 @@ void HelloTriangleApplication::cleanupSwapChain(){
     vkDestroySwapchainKHR(device, swapChain, nullptr);
 }
 
-void HelloTriangleApplication::recreateSwapChain(){
+void Application::recreateSwapChain(){
     // 处理最小化
     int width = 0,height = 0;
     glfwGetFramebufferSize(window, &width, &height);

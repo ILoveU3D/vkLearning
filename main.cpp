@@ -2,10 +2,10 @@
 #include <stdexcept>
 #include <cstdlib>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
 int main(){
-    HelloTriangleApplication app;
+    Application app;
     try
     {
         app.run();

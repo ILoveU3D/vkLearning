@@ -1,6 +1,6 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::initVulkan(){
+void Application::initVulkan(){
     // 创建用例
     createInstance();
     // 设置回调信使

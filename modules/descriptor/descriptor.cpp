@@ -1,9 +1,9 @@
 #include <array>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 #include <UniformBufferObject.h>
 
-void HelloTriangleApplication::createDescriptorSetLayout(){
+void Application::createDescriptorSetLayout(){
     VkDescriptorSetLayoutBinding uboLayoutBinding{};
     uboLayoutBinding.binding = 0;
     uboLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
@@ -26,7 +26,7 @@ void HelloTriangleApplication::createDescriptorSetLayout(){
         throw std::runtime_error("failed to create descriptor set layout");
 }
 
-void HelloTriangleApplication::createUniformBuffers(){
+void Application::createUniformBuffers(){
     VkDeviceSize bufferSize = sizeof(UniformBufferObject);
     uniformBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     uniformBuffersMemory.resize(MAX_FRAMES_IN_FLIGHT);
@@ -37,7 +37,7 @@ void HelloTriangleApplication::createUniformBuffers(){
     }
 }
 
-void HelloTriangleApplication::createDescriptorPool(){
+void Application::createDescriptorPool(){
     std::array<VkDescriptorPoolSize, 2> descriptorPoolSize{};
     descriptorPoolSize[0].type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
     descriptorPoolSize[0].descriptorCount = static_cast<uint32_t>(MAX_FRAMES_IN_FLIGHT);
@@ -53,7 +53,7 @@ void HelloTriangleApplication::createDescriptorPool(){
         throw std::runtime_error("failed to create descriptor pool");
 }
 
-void HelloTriangleApplication::createDescriptorSet(){
+void Application::createDescriptorSet(){
     std::vector<VkDescriptorSetLayout> layouts(MAX_FRAMES_IN_FLIGHT, descriptorSetLayout);
 
     VkDescriptorSetAllocateInfo descriptorAllocateInfo{};

@@ -1,7 +1,7 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
 // 创建实例
-void HelloTriangleApplication::createInstance(){
+void Application::createInstance(){
     // 检查验证层可用性
     if(enableValidationLayers && !checkValidationLayerSupport())
         throw std::runtime_error("valiation layer not avaliable!");

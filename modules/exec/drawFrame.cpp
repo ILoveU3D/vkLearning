@@ -1,6 +1,6 @@
 #include <chrono>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 #include <UniformBufferObject.h>
 
 // 渲染一帧包含以下步骤:
@@ -10,7 +10,7 @@
 // 4.提交录制好的command buffer
 // 5.展示swap chain中的图像
 // 以上的GPU步骤需要做好各级同步
-void HelloTriangleApplication::drawFrame(){
+void Application::drawFrame(){
     // 首先等待上一帧完成
     vkWaitForFences(device, 1, &inFlightFences[currentFrame], VK_TRUE, UINT64_MAX);
 
@@ -74,7 +74,7 @@ void HelloTriangleApplication::drawFrame(){
     currentFrame = (currentFrame+1) % MAX_FRAMES_IN_FLIGHT;
 }
 
-void HelloTriangleApplication::updateUniformBuffer(){
+void Application::updateUniformBuffer(){
     static auto startTime = std::chrono::high_resolution_clock::now();
     auto currentTime = std::chrono::high_resolution_clock::now();
     auto time = std::chrono::duration<float, std::chrono::seconds::period>(currentTime - startTime).count();

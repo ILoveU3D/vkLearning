@@ -1,6 +1,6 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::generateMipmaps(VkImage image, uint32_t texWidth, uint32_t texHeight, uint32_t mipLevels){
+void Application::generateMipmaps(VkImage image, uint32_t texWidth, uint32_t texHeight, uint32_t mipLevels){
     VkCommandBuffer commandBuffer = beginSingleCommand();
 
     VkImageMemoryBarrier barrier{};

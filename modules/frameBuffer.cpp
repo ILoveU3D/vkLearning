@@ -1,8 +1,8 @@
 #include <array>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::createFramebuffers(){
+void Application::createFramebuffers(){
     swapChainFrameBuffers.resize(swapChainImageViews.size());
 
     // 遍历视图，创建帧缓冲区

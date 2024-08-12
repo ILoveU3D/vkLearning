@@ -8,7 +8,7 @@ find_package(glfw3 REQUIRED)
 
 include_directories(./glm/)
 include_directories(./include/)
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB_RECURSE SOURCES "modules/*.cpp")
 
 add_executable(triangle main.cpp ${SOURCES})
 target_link_libraries(triangle glfw Vulkan::Vulkan)

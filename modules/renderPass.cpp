@@ -1,8 +1,8 @@
 #include <array>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::createRenderPass(){
+void Application::createRenderPass(){
     // 期望framebuffer具有与swap相同的图像格式
     VkAttachmentDescription colorAttachment{};
     colorAttachment.format = swapChainImageFormat;

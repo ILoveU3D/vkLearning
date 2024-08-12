@@ -1,6 +1,6 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::createVertexBuffer(){
+void Application::createVertexBuffer(){
     VkDeviceSize bufferSize = sizeof(vertices[0]) * vertices.size();
     VkBuffer stageBuffer;
     VkDeviceMemory stageBufferMemory;
@@ -21,7 +21,7 @@ void HelloTriangleApplication::createVertexBuffer(){
     vkFreeMemory(device, stageBufferMemory, nullptr);
 }
 
-void HelloTriangleApplication::createIndexBuffer(){
+void Application::createIndexBuffer(){
     VkDeviceSize bufferSize = sizeof(indices[0]) * indices.size();
     VkBuffer stageBuffer;
     VkDeviceMemory stageBufferMemory;

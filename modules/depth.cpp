@@ -1,6 +1,6 @@
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
-void HelloTriangleApplication::createDepthResources(){
+void Application::createDepthResources(){
     std::vector<VkFormat> candidatesFormat = {VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT};
     VkFormat depthFormat;
     for(auto format: candidatesFormat){

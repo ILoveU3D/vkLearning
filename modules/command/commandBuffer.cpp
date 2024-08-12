@@ -1,9 +1,9 @@
 #include <array>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 #include <QueueFamilyIndice.h>
 
-void HelloTriangleApplication::createCommandPool(){
+void Application::createCommandPool(){
     // 获取两个队列
     QueueFamilyIndice2 indice;
     uint32_t queueFamilyCount = 0;
@@ -32,7 +32,7 @@ void HelloTriangleApplication::createCommandPool(){
         throw std::runtime_error("failed to create command pool");
 }
 
-void HelloTriangleApplication::createCommandBuffer(){
+void Application::createCommandBuffer(){
     commandBuffers.resize(MAX_FRAMES_IN_FLIGHT);
     VkCommandBufferAllocateInfo commandBufferAllocInfo{};
     commandBufferAllocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
@@ -43,7 +43,7 @@ void HelloTriangleApplication::createCommandBuffer(){
         throw std::runtime_error("failed to allocate command buffer");
 }
 
-void HelloTriangleApplication::recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex){
+void Application::recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex){
     // 开始录制缓冲区
     VkCommandBufferBeginInfo commandBufferBeginInfo{};
     commandBufferBeginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;

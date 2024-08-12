@@ -1,6 +1,6 @@
 #include <unordered_map>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <tiny_obj_loader.h>
 #define GLM_ENABLE_EXPERIMENTAL
@@ -17,7 +17,7 @@ namespace std {
     };
 }
 
-void HelloTriangleApplication::loadModel(){
+void Application::loadModel(){
     tinyobj::attrib_t attribution;
     std::vector<tinyobj::shape_t> shapes;
     std::vector<tinyobj::material_t> materials;

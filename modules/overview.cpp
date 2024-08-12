@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include <HelloTriangleApplication.h>
+#include <Application.h>
 
 void destroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks* pAllocator){
     auto function = (PFN_vkDestroyDebugUtilsMessengerEXT)vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT");
@@ -10,7 +10,7 @@ void destroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT
         return function(instance, debugMessenger, pAllocator);
 }
 
-void HelloTriangleApplication::run(){
+void Application::run(){
     std::cout << "----------------------------init glfw...----------------------------" << std::endl;
     initWindow();
     std::cout << "----------------------------init vulkan...----------------------------" << std::endl;
@@ -21,7 +21,7 @@ void HelloTriangleApplication::run(){
     cleanUp();
 }
 
-void HelloTriangleApplication::mainLoop(){
+void Application::mainLoop(){
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
         drawFrame();
@@ -29,7 +29,7 @@ void HelloTriangleApplication::mainLoop(){
     vkDeviceWaitIdle(device);
 }
 
-void HelloTriangleApplication::cleanUp(){
+void Application::cleanUp(){
     vkDestroyImageView(device, depthImageView, nullptr);
     vkDestroyImage(device, depthImage, nullptr);
     vkFreeMemory(device, depthImageMemory, nullptr);
