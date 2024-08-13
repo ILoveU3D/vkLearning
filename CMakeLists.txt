@@ -7,6 +7,9 @@ find_package(Vulkan REQUIRED FATAL_ERROR)
 find_package(glfw3 REQUIRED)
 
 include_directories(./glm/)
+include_directories(./stb/)
+include_directories(./tinyobjloader/)
+
 include_directories(./include/)
 file(GLOB_RECURSE SOURCES "modules/*.cpp")
 

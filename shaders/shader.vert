@@ -1,4 +1,4 @@
-#version 450
+#version 450 core
 
 layout(binding = 0) uniform UniformBufferObject{
     mat4 model;
