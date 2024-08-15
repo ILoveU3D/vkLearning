@@ -22,12 +22,13 @@ public:
     float mouseSensitivity;
     float zoom;
 
-    Camera():position(glm::vec3(0.0f,0.0f,0.0f)), up(glm::vec3(0.0f, 1.0f, 0.0f)),front(glm::vec3(0.0f,0.0f,-1.0f)), yaw(-90), pitch(0), movementSpeed(2.5f), mouseSensitivity(0.2f), zoom(45){
+    Camera():position(glm::vec3(0.0f,-5.0f,0.0f)), up(glm::vec3(0.0f, 0.0f, 1.0f)),front(glm::vec3(0.0f,1.0f,0.0f)), yaw(0), pitch(0), movementSpeed(2.5f), mouseSensitivity(0.2f), zoom(45){
         worldUp = up;
         updateCamera();
     }
-
-    glm::mat4 getView(){
+    
+    // 部分接口
+    glm::mat4 getViewMatrix(){
         return glm::lookAt(position, position+front, up);
     }
 
@@ -50,12 +51,13 @@ public:
         }
     }
 
-    void responseMouseMovement(float offsetX, float offsetY){
-        offsetX *= mouseSensitivity;
-        offsetY *= mouseSensitivity;
-        yaw += offsetX;
-        pitch += offsetY;
-        pitch = std::clamp(pitch, 89.0f, -89.0f);
+    void responseMouseMovement(float positionX, float positionY){
+        glm::vec2 offset = glm::vec2(positionX - lastPosition.x, lastPosition.y - positionY);
+        offset *= mouseSensitivity;
+        yaw += offset.x;
+        pitch += offset.y;
+        // pitch = std::clamp(pitch, -89.0f, 89.0f);
+        lastPosition = glm::vec2(positionX, positionY);
         updateCamera();
     }
 
@@ -64,11 +66,11 @@ public:
         zoom = std::clamp(zoom, 1.0f, 45.0f);
     }
 
-
 private:
+    glm::vec2 lastPosition;
     void updateCamera(){
         // 计算新方向
-        glm::vec3 front = glm::vec3(cos(glm::radians(yaw))*cos(glm::radians(pitch)), sin(glm::radians(pitch)), sin(glm::radians(yaw))*cos(glm::radians(pitch)));
+        front = glm::vec3(sin(glm::radians(pitch))*cos(glm::radians(yaw)), cos(glm::radians(pitch)), cos(glm::radians(pitch))*sin(glm::radians(yaw)));
         front = glm::normalize(front);
         right = glm::normalize(glm::cross(front, worldUp));
         up = glm::normalize(glm::cross(right, front));

@@ -6,14 +6,30 @@
 
 #include <Application.h>
 
+bool firstMouseFlag = true;
+
 void Application::framebufferResizeCallback(GLFWwindow* window, int width, int height){
     auto app = reinterpret_cast<Application*>(glfwGetWindowUserPointer(window));
     app -> framebufferResized = true;
 }
 
-void escapeCallback(GLFWwindow* window, int key, int scancode, int action, int mods){
-    if(key == GLFW_KEY_SPACE && action == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, GL_TRUE);
+void Application::keyboardCallback(GLFWwindow* window, int key, int scancode, int action, int mods){
+    if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+
+void Application::mouseCallback(GLFWwindow* window, double xposIn, double yposIn){
+    auto app = reinterpret_cast<Application*>(glfwGetWindowUserPointer(window));
+
+    float xpos = static_cast<float>(xposIn);
+    float ypos = static_cast<float>(yposIn);
+    app -> camera.responseMouseMovement(xpos, ypos);
+
+}
+
+void Application::scrollCallback(GLFWwindow* window, double xoffset, double yoffset){
+    auto app = reinterpret_cast<Application*>(glfwGetWindowUserPointer(window));
+    app -> camera.responseMouseScroll(static_cast<float>(yoffset));
 }
 
 void Application::initWindow(){
@@ -27,6 +43,8 @@ void Application::initWindow(){
     window = glfwCreateWindow(mode->width, mode->height, "Viking's Room!", monitor, nullptr);
     glfwSetWindowUserPointer(window, this);
     glfwSetFramebufferSizeCallback(window, framebufferResizeCallback);
-    glfwSetKeyCallback(window, escapeCallback);
+    glfwSetKeyCallback(window, keyboardCallback);
+    glfwSetCursorPosCallback(window, mouseCallback);
+    glfwSetScrollCallback(window, scrollCallback);
     std::cout << "Window Complete" << std::endl;
 }

@@ -1,5 +1,3 @@
-#include <chrono>
-
 #include <Application.h>
 #include <UniformBufferObject.h>
 
@@ -24,6 +22,7 @@ void Application::drawFrame(){
         return;
     }
 
+    inputCallback();
     updateUniformBuffer();
 
     // 此处避免死锁
@@ -75,19 +74,27 @@ void Application::drawFrame(){
 }
 
 void Application::updateUniformBuffer(){
-    static auto startTime = std::chrono::high_resolution_clock::now();
-    auto currentTime = std::chrono::high_resolution_clock::now();
-    deltaFrame = std::chrono::duration<float, std::chrono::seconds::period>(currentTime - startTime).count();
-
+    auto currentTime = static_cast<float>(glfwGetTime());
+    deltaFrame = currentTime - lastTime;
+    lastTime = currentTime;
+    
     UniformBufferObject ubo{};
-    ubo.model = glm::rotate(glm::mat4(1.0f), deltaFrame * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-    ubo.view = glm::lookAt(glm::vec3(2.0f, 2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    ubo.model = glm::rotate(glm::mat4(1.0f), (currentTime - startTime) * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    // ubo.view = glm::lookAt(glm::vec3(2.0f, 2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    ubo.view = camera.getViewMatrix();
     ubo.proj = glm::perspective(glm::radians(45.0f), static_cast<float>(swapChainExtent.width / swapChainExtent.height), 0.1f, 10.0f);
     ubo.proj[1][1] *= -1;
 
     memcpy(uniformBuffersMapped[currentFrame], &ubo, sizeof(ubo));
 }
 
-void Application::receiveUserInput(){
-    
+void Application::inputCallback(){
+    if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        camera.responseKey(FORWARD, deltaFrame);
+    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        camera.responseKey(BACK, deltaFrame);
+    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        camera.responseKey(LEFT, deltaFrame);
+    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        camera.responseKey(RIGHT, deltaFrame);
 }

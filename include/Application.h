@@ -20,14 +20,15 @@ const int WINDOW_HEIGHT = 1440;
 class Application{
 public:
     void run();
-    // 动态调整窗口
-    bool framebufferResized = false;
 private:
-    // 记录全局帧
     uint32_t currentFrame = 0;
+    float startTime = static_cast<float>(glfwGetTime());
+    float lastTime = 0;
     float deltaFrame = 0;
     // glfw窗体
     GLFWwindow* window;
+    // 动态调整窗口
+    bool framebufferResized = false;
     // Vulkan实例
     VkInstance instance;
     // 是否启用验证层
@@ -121,6 +122,10 @@ private:
 
     void initWindow();
     static void framebufferResizeCallback(GLFWwindow* window, int width, int height);
+    static void keyboardCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+    static void mouseCallback(GLFWwindow* window, double xposIn, double yposIn);
+    static void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
+    void inputCallback();
     void initVulkan();
     void mainLoop();
     void cleanUp();
@@ -168,5 +173,4 @@ private:
     void createDepthResources();
     void loadModel();
     void generateMipmaps(VkImage image, uint32_t texWidth, uint32_t texHeight, uint32_t mipLevels);
-    void receiveUserInput();
 };
