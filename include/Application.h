@@ -8,6 +8,7 @@
 #include <GLFW/glfw3.h>
 
 #include <Vertex.h>
+#include <Camera.h>
 
 const std::string VERTEX_SHADER_PATH = "/home/mtuser/Projects/codes/api/triangle/shaders/vert.spv";
 const std::string FRAGMENT_SHADER_PATH = "/home/mtuser/Projects/codes/api/triangle/shaders/frag.spv";
@@ -24,6 +25,7 @@ public:
 private:
     // 记录全局帧
     uint32_t currentFrame = 0;
+    float deltaFrame = 0;
     // glfw窗体
     GLFWwindow* window;
     // Vulkan实例
@@ -114,6 +116,8 @@ private:
     VkImage depthImage;
     VkDeviceMemory depthImageMemory;
     VkImageView depthImageView;
+    // 摄像机
+    Camera camera;
 
     void initWindow();
     static void framebufferResizeCallback(GLFWwindow* window, int width, int height);
@@ -164,4 +168,5 @@ private:
     void createDepthResources();
     void loadModel();
     void generateMipmaps(VkImage image, uint32_t texWidth, uint32_t texHeight, uint32_t mipLevels);
+    void receiveUserInput();
 };
