@@ -14,8 +14,6 @@ const std::string VERTEX_SHADER_PATH = std::string(SHADER_PATH) + "vert.spv";
 const std::string FRAGMENT_SHADER_PATH = std::string(SHADER_PATH) + "frag.spv";
 const std::string MODEL_PATH = std::string(ASSET_PATH) + "viking_room.obj";
 const std::string TEXTURE_PATH = std::string(ASSET_PATH) + "viking_room.png";
-const int WINDOW_WIDTH = 2560;
-const int WINDOW_HEIGHT = 1440;
 
 class Application{
 public:
@@ -59,9 +57,9 @@ private:
     std::vector<VkImage> swapChainImages;
     // 临时存储，swapchain的图像显示格式
     VkFormat swapChainImageFormat;
-    // extent大小
-    const uint32_t VIEW_WIDTH = 800;
-    const uint32_t VIEW_HEIGHT = 800;
+    // Model大小
+    const uint32_t MODEL_WIDTH = 800;
+    const uint32_t MODEL_HEIGHT = 800;
     // 临时存储，swapchain的交换范围
     VkExtent2D swapChainExtent;
     // 记录交换链中的图像视图
