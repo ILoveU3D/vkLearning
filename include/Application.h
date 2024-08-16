@@ -10,10 +10,10 @@
 #include <Vertex.h>
 #include <Camera.h>
 
-const std::string VERTEX_SHADER_PATH = "/home/mtuser/Projects/codes/api/triangle/shaders/vert.spv";
-const std::string FRAGMENT_SHADER_PATH = "/home/mtuser/Projects/codes/api/triangle/shaders/frag.spv";
-const std::string MODEL_PATH = "/home/mtuser/Projects/codes/api/triangle/assets/viking_room.obj";
-const std::string TEXTURE_PATH = "/home/mtuser/Projects/codes/api/triangle/assets/viking_room.png";
+const std::string VERTEX_SHADER_PATH = std::string(SHADER_PATH) + "vert.spv";
+const std::string FRAGMENT_SHADER_PATH = std::string(SHADER_PATH) + "frag.spv";
+const std::string MODEL_PATH = std::string(ASSET_PATH) + "viking_room.obj";
+const std::string TEXTURE_PATH = std::string(ASSET_PATH) + "viking_room.png";
 const int WINDOW_WIDTH = 2560;
 const int WINDOW_HEIGHT = 1440;
 
