@@ -19,6 +19,5 @@ add_definitions(-DSHADER_PATH="${SHADER_PATH}")
 set(ASSET_PATH "${CMAKE_SOURCE_DIR}/assets/")
 add_definitions(-DASSET_PATH="${ASSET_PATH}")
 
-
 add_executable(triangle main.cpp ${SOURCES})
 target_link_libraries(triangle glfw Vulkan::Vulkan)

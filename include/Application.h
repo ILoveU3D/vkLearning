@@ -8,24 +8,25 @@
 #include <GLFW/glfw3.h>
 
 #include <Vertex.h>
+#include <Camera.h>
 
 const std::string VERTEX_SHADER_PATH = std::string(SHADER_PATH) + "vert.spv";
 const std::string FRAGMENT_SHADER_PATH = std::string(SHADER_PATH) + "frag.spv";
 const std::string MODEL_PATH = std::string(ASSET_PATH) + "viking_room.obj";
 const std::string TEXTURE_PATH = std::string(ASSET_PATH) + "viking_room.png";
-const int WINDOW_WIDTH = 2560;
-const int WINDOW_HEIGHT = 1440;
 
 class Application{
 public:
     void run();
-    // 动态调整窗口
-    bool framebufferResized = false;
 private:
-    // 记录全局帧
     uint32_t currentFrame = 0;
+    float startTime = static_cast<float>(glfwGetTime());
+    float lastTime = 0;
+    float deltaFrame = 0;
     // glfw窗体
     GLFWwindow* window;
+    // 动态调整窗口
+    bool framebufferResized = false;
     // Vulkan实例
     VkInstance instance;
     // 是否启用验证层
@@ -56,9 +57,9 @@ private:
     std::vector<VkImage> swapChainImages;
     // 临时存储，swapchain的图像显示格式
     VkFormat swapChainImageFormat;
-    // extent大小
-    const uint32_t VIEW_WIDTH = 800;
-    const uint32_t VIEW_HEIGHT = 800;
+    // Model大小
+    const uint32_t MODEL_WIDTH = 800;
+    const uint32_t MODEL_HEIGHT = 800;
     // 临时存储，swapchain的交换范围
     VkExtent2D swapChainExtent;
     // 记录交换链中的图像视图
@@ -114,9 +115,15 @@ private:
     VkImage depthImage;
     VkDeviceMemory depthImageMemory;
     VkImageView depthImageView;
+    // 摄像机
+    Camera camera;
 
     void initWindow();
     static void framebufferResizeCallback(GLFWwindow* window, int width, int height);
+    static void keyboardCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+    static void mouseCallback(GLFWwindow* window, double xposIn, double yposIn);
+    static void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
+    void inputCallback();
     void initVulkan();
     void mainLoop();
     void cleanUp();
