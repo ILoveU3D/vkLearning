@@ -39,8 +39,14 @@ void Application::initWindow(){
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     GLFWmonitor* monitor = glfwGetPrimaryMonitor();
     const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+    if(monitor == NULL)
+        throw std::runtime_error("primary monitor not found!");
     // 创建窗口
+#ifndef MOORETHREADS
     window = glfwCreateWindow(mode->width, mode->height, "Viking's Room!", monitor, nullptr);
+#else
+    window = glfwCreateWindow(800, 800, "Viking's Room!", nullptr, nullptr);
+#endif
     glfwSetWindowUserPointer(window, this);
     glfwSetFramebufferSizeCallback(window, framebufferResizeCallback);
     glfwSetKeyCallback(window, keyboardCallback);

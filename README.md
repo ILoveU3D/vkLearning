@@ -16,12 +16,17 @@ git submodule update --init --recursive
 
 Then run this command to build & start this demo:
 ~~~ shell
-sh run.sh 3
+sh install.sh 3
 ~~~
 
 (Optional) If you want to debug with `GDB`, run this command:
 ~~~ shell
-sh debug.sh 3
+sh install.sh 4
+~~~
+
+(Optional) If you want to run this demo on other GPU(etc. NVIDIA, AMD...), run this command:
+~~~ shell
+sh install.sh 3 NVIDIA/AMD
 ~~~
 
 ## You can see...

@@ -6,6 +6,12 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 find_package(Vulkan REQUIRED FATAL_ERROR)
 find_package(glfw3 REQUIRED)
 
+option(GPU "define your GPU" MOORETHREADS)
+message("GPU is ${GPU}")
+if(GPU STREQUAL "MooreThread")
+    add_definitions(-DMOORETHREADS)
+endif()
+
 include_directories(./glm/)
 include_directories(./stb/)
 include_directories(./tinyobjloader/)
