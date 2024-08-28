@@ -35,6 +35,11 @@ void Application::loadModel(){
                 attribution.vertices[3*index.vertex_index + 1],
                 attribution.vertices[3*index.vertex_index + 2]
             };
+            vertex.normal = {
+                attribution.normals[3*index.normal_index*3 + 0],
+                attribution.normals[3*index.normal_index*3 + 1],
+                attribution.normals[3*index.normal_index*3 + 2]
+            };
             vertex.texCoord = {
                 attribution.texcoords[2 * index.texcoord_index + 0],
                 1.0f - attribution.texcoords[2 * index.texcoord_index + 1],
