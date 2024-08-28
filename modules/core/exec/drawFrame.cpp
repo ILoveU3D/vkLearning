@@ -79,11 +79,13 @@ void Application::updateUniformBuffer(){
     lastTime = currentTime;
     
     UniformBufferObject ubo{};
-    ubo.model = glm::rotate(glm::mat4(1.0f), (currentTime - startTime) * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    // ubo.model = glm::rotate(glm::mat4(1.0f), (currentTime - startTime) * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+    ubo.model = glm::mat4(1.0f);
     ubo.model = glm::scale(ubo.model, glm::vec3(1.0f, 1.0f, (float)swapChainExtent.height/MODEL_HEIGHT));
     ubo.view = camera.getViewMatrix();
     ubo.proj = glm::perspective(glm::radians(camera.zoom), static_cast<float>(swapChainExtent.width / swapChainExtent.height), 0.1f, 10.0f);
     ubo.proj[1][1] *= -1;
+    ubo.viewPosition = camera.position;
 
     memcpy(uniformBuffersMapped[currentFrame], &ubo, sizeof(ubo));
 }

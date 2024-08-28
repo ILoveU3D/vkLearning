@@ -12,21 +12,24 @@ fi
 compile(){
     cmake -S . -B build -DGPU=${GPU}
     cmake --build build
-    echo "compile shaders ..."
-    cd shaders
-    glslc shader.vert -o vert.spv
-    glslc shader.frag -o frag.spv
-    cd ..
 }
 
 run(){
     export DISPLAY=:0.0
-    ./build/triangle
+    echo "正在编译着色器 ..."
+    glslc shaders/glsl/shader.vert -o shaders/spirv/vert.spv
+    glslc shaders/glsl/shader.frag -o shaders/spirv/frag.spv
+    if [ $? -eq 0 ]; then
+        echo "着色器编译完成"
+        ./build/Triangle
+    else
+        echo "着色器编译失败"
+    fi
 }
 
 debug(){
     export DISPLAY=:0.0
-    gdb ./build/triangle
+    gdb ./build/Triangle
 }
 
 case $1 in

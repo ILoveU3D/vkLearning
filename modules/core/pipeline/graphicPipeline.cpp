@@ -52,7 +52,7 @@ void Application::createGraphicPipeline(){
     dynamicStateCreateInfo.dynamicStateCount = static_cast<uint32_t>(dynamicStates.size());
     dynamicStateCreateInfo.pDynamicStates = dynamicStates.data();
 
-    // 创建顶点输入
+    // 创建顶点输入格式
     VkPipelineVertexInputStateCreateInfo vertexInputCreateInfo{};
     auto bindingDescription = Vertex::getBindingDescription();
     auto attributeDescription = Vertex::getAttributeDescriptions();

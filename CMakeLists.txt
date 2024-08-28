@@ -28,7 +28,7 @@ file(GLOB_RECURSE SOURCES "modules/*.cpp")
 add_executable(Triangle main.cpp ${SOURCES})
 
 # 定义宏和资源路径
-set(SHADER_PATH "${CMAKE_SOURCE_DIR}/shaders/")
+set(SHADER_PATH "${CMAKE_SOURCE_DIR}/shaders/spirv/")
 add_definitions(-DSHADER_PATH="${SHADER_PATH}")
 
 set(ASSET_PATH "${CMAKE_SOURCE_DIR}/assets/")
